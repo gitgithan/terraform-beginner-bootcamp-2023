@@ -24,3 +24,17 @@ BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
 PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
 UBUNTU_CODENAME=jammy
 ```
+
+## Checking AWS
+We can check if aws if configured correctly by running
+`aws sts get-caller-identity`
+
+If not configured --> `Unable to locate credentials. You can configure credentials by running "aws configure"`
+If successful:
+```
+{
+    "UserId": "EACVXBLU4C2224RXEA34B1",
+    "Account": "564342400123",
+    "Arn": "arn:aws:iam::564342400123:user/terraform"
+}
+```
