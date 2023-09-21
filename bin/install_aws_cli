@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+cd /workspace
+
+FILENAME='awscliv2.zip'
+
+if  [[ -f $FILENAME ]]; then
+    rm $FILENAME
+    rm -rf aws
+fi
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install --update # Found preexisting AWS CLI installation: /usr/local/aws-cli/v2/current. Please rerun install script with --update flag.
+
+aws sts get-caller-identity
+
+cd $PROJECT_ROOT
